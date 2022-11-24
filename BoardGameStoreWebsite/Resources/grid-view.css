@@ -1,0 +1,49 @@
+﻿body {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 5em auto 5em;
+    grid-template-rows: 5em auto 5em;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "navbar content content"
+        "navbar footer footer";
+}
+.header {
+    grid-area: header;
+    background: linear-gradient(rgb(245, 64, 45), rgb(255, 101, 51));
+
+}
+
+.header-list {
+    list-style: none;
+    display: flex;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: "Brush Script MT", cursive;
+    color: white;
+    font-size: 2em;
+
+}
+.logo img {
+    margin-right: 5px;
+    filter: invert(100%);
+}
+.navbar {
+    grid-area: navbar;
+    background: linear-gradient(rgb(30, 30, 30), rgb(12, 2, 43));
+}
+
+.form {
+    grid-area: content;
+    background: linear-gradient(rgb(234 233 212), rgb(250, 248, 230));
+}
+
+.footer {
+    background-color: rgb(50, 5, 82);
+    grid-area: footer;
+}
+

@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="Resources\grid-view.css" />
+    <Content Include="Resources\images\store-logo.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

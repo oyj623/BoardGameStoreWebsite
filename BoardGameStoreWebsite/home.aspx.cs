@@ -13,5 +13,10 @@ namespace BoardGameStoreWebsite
         {
 
         }
+
+        protected void BulletedList1_Click(object sender, BulletedListEventArgs e)
+        {
+
+        }
     }
 }
