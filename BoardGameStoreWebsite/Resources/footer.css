@@ -1,0 +1,22 @@
+﻿.footer {
+    background: linear-gradient(rgb(255, 101, 51), rgb(245, 64, 45));
+    padding: 2em 5em;
+    font-size: 2em;
+}
+
+.footer-details {
+    display: flex;
+}
+
+.address {
+    width: 70%;
+}
+
+.contact {
+    width: 30%;
+}
+
+.copyright {
+    text-align: center;
+    margin: 0
+}

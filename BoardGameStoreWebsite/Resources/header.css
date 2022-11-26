@@ -1,0 +1,49 @@
+﻿.header {
+    position: fixed;
+    grid-area: header;
+    background: linear-gradient(rgb(245, 64, 45), rgb(255, 101, 51));
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-list {
+    list-style: none;
+    height: 3em;
+    display: flex;
+}
+
+.header-list li {
+    display: inline;
+    float: left;
+}
+
+.header-list li:last-child {
+    width: 80%;
+    text-align: right;
+}
+
+.header-list li:last-child i {
+    font-size: 3em;
+    color: white;
+}
+
+
+.cart-icon {
+    width: 3em;
+    height: auto;
+    border-radius: 1.5em;
+    transform: translateX(-3em);
+    text-align: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: "Brush Script MT", cursive;
+    color: white;
+    font-size: 3em;
+}
+
+.logo img {
+    margin-right: 5px;
+    filter: invert(100%);
+}
