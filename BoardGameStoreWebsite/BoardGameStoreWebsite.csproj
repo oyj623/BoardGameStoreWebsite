@@ -70,10 +70,15 @@
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="Resources\grid-view.css" />
+    <Content Include="Resources\images\Avalon.png" />
+    <Content Include="Resources\images\Blood Bound.png" />
+    <Content Include="Resources\images\Carcassonne.png" />
     <Content Include="Resources\images\store-logo.png" />
+    <Content Include="Resources\images\Werewolf.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardGame.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
