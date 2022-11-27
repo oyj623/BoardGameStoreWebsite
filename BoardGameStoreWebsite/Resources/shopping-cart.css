@@ -12,6 +12,12 @@
     margin: 1em 3em;
     padding: 0.5em 1em;
 }
+.alert {
+    color: rgb(231, 55, 12);
+    font-size: 1.8em;
+    text-align: center;
+    display: block;
+}
 
 .cart-view {
     display: flex;

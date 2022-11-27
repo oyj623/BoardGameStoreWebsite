@@ -23,9 +23,18 @@
     padding-right: 1.5em;
 }
 
-.header-list li:last-child i {
-    font-size: 3em;
+.cart-link {
+    font-size: 1.5em;
     color: white;
+    border-radius: 1em;
+    border: 2px solid white;
+    transition: 0.7s;
+    text-decoration: none;
+    padding: 0.3em 1em;
+    display: inline-block;
+}
+.cart-link:hover {
+    box-shadow: 0px 0px 10px rgb(251, 247, 51);
 }
 
 

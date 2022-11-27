@@ -62,7 +62,7 @@ namespace BoardGameStoreWebsite
                 Session["balance"] = 150.00;
             }
             Wallet.Text = "RM" + balance.ToString() + ".00";
-
+            Alert.Visible = false;
         }
 
         protected void Pay_Click(object sender, EventArgs e)
@@ -78,7 +78,17 @@ namespace BoardGameStoreWebsite
                     if (chk.Checked)
                     {
                         TextBox quantity = item.FindControl("Quantity") as TextBox;
-                        int qty = Int16.Parse(quantity.Text);
+                        int qty;
+                        try
+                        {
+                            qty = Int16.Parse(quantity.Text);
+                        }
+                        catch
+                        {
+                            Alert.Text = "Please enter an integer for quantity";
+                            Alert.Visible = true;
+                            return;
+                        }
 
                         if (qty <= shoppingCart[item.ItemIndex].Game.Stock)
                         {
@@ -86,8 +96,9 @@ namespace BoardGameStoreWebsite
                         }
                         else
                         {
-                            Label notEnoughStock = item.FindControl("NotEnoughStock") as Label;
-                            notEnoughStock.Attributes.Add("style", "display: block");
+                            Alert.Text = "Not enough stock";
+                            Alert.Visible= true;
+                            return;
                         }
                     }
                 }
@@ -99,10 +110,10 @@ namespace BoardGameStoreWebsite
                     Wallet.Text = balance.ToString();
                     Order thisOrder = new Order()
                     {
-                        Name = RecipientName.Text,
-                        Address = RecipientAddress.Text,
-                        Phone = RecipientPhone.Text,
-                        Email = RecipientEmail.Text,
+                        Name = RecipientName.Text == ""? "Anonymous": RecipientName.Text,
+                        Address = RecipientAddress.Text == ""? "Unspecified": RecipientAddress.Text,
+                        Phone = RecipientPhone.Text == ""? "0123456789": RecipientPhone.Text,
+                        Email = RecipientEmail.Text == ""? "anonymous@gmail.com": RecipientEmail.Text,
                         Items = new List<CartItem>(),
                         TotalPrice = totalPrice
                     };
@@ -132,22 +143,24 @@ namespace BoardGameStoreWebsite
                     }
                     orderList.Add(thisOrder);
                     Session["orderList"] = orderList;
-                    BalanceInsufficient.Attributes.Add("style", "display: none;");
                     Session["gamelist"] = gameList;
                     Response.Redirect("home.aspx");
                 }
                 else
                 {
                     // balance insufficient
-                    BalanceInsufficient.Attributes.Add("style", "display: block;");
+                    Alert.Text = "Insufficient balance";
+                    Alert.Visible = true;
+                    return;
                 }
-                FunctionNotAvailable.Attributes.Add("style", "display: none;");
+                Alert.Visible = false;
                 
             }
             else
             {
                 // warning
-                FunctionNotAvailable.Attributes.Add("style", "display: block;");
+                Alert.Text = "Function currently unavailable...";
+                Alert.Visible = true;
             }
             
         }

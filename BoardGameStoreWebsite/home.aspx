@@ -20,7 +20,7 @@
                 <a href="home.aspx" class="logo">OnlyBoardGames</a>
             </li>
             <li>    
-                <a href="shopping-cart.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="shopping-cart.aspx" class="cart-link">Your cart &rarr;<i class="fa-solid fa-cart-shopping"></i></a>
             </li>
         </ul>
     </header>
@@ -52,7 +52,7 @@
                                 <%#Eval("OutputItemsDetails") %>
                             </div>
                             <div class="recipient-total-price">
-                                Total price: <%#Eval("TotalPrice") %>
+                                Total price: RM<%#Eval("TotalPrice") %>.00
                             </div>
                         </div>
                     </div>

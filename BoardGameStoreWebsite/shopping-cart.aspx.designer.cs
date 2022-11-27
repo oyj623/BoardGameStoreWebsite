@@ -33,6 +33,15 @@ namespace BoardGameStoreWebsite
         protected global::System.Web.UI.WebControls.Label Wallet;
 
         /// <summary>
+        /// Alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Alert;
+
+        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>
@@ -94,23 +103,5 @@ namespace BoardGameStoreWebsite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Pay;
-
-        /// <summary>
-        /// BalanceInsufficient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BalanceInsufficient;
-
-        /// <summary>
-        /// FunctionNotAvailable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FunctionNotAvailable;
     }
 }

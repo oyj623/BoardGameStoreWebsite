@@ -28,6 +28,7 @@
         <div class="wallet">
             <i class="fa-solid fa-wallet"></i> Board Game Wallet: <asp:Label ID="Wallet" runat="server" Text="Label"></asp:Label>
         </div>
+        <asp:Label ID="Alert" runat="server" CssClass="alert"></asp:Label>
         <asp:Repeater ID="Repeater1" runat="server">
             <HeaderTemplate></HeaderTemplate>
             <ItemTemplate>
@@ -89,13 +90,11 @@
             <div class="payment">
                 <h4>Select payment method: </h4>
                 <asp:RadioButtonList ID="PaymentMethod" runat="server">
-                    <asp:ListItem Text="Board Game Wallet">Board Game Wallet</asp:ListItem>
+                    <asp:ListItem Text="Board Game Wallet" Selected="True">Board Game Wallet</asp:ListItem>
                     <asp:ListItem Text="Online Transfer">Online Transfer</asp:ListItem>
                     <asp:ListItem Text="Cards">Credit/Debit Card</asp:ListItem>
                 </asp:RadioButtonList>
-                <asp:Button ID="Pay" runat="server" Text="Pay" CssClass="pay-button" OnClick="Pay_Click" />
-                <asp:Label ID="BalanceInsufficient" runat="server" CssClass="balance-insufficient" Text="Balance Insufficient !!"></asp:Label>
-                <asp:Label ID="FunctionNotAvailable" runat="server" CssClass="function-unavailable" Text="Function not available yet..."></asp:Label>
+                <asp:Button ID="Pay" runat="server" Text="Pay" CssClass="pay-button" OnClientClick="return validateForm();" OnClick="Pay_Click" />
             </div>
         </div>
     </form>
@@ -120,9 +119,14 @@
     </footer>
     <script src="https://kit.fontawesome.com/a4ee3fc773.js" crossorigin="anonymous"></script>
     <script>
-            function validateForm() {
-
+        function validateForm() {
+            let x = document.getElementById("Quantity").value;
+            if (isNan(x)) {
+                alert("Please input an integer as quantity.");
+                return false;
             }
+            return true;
+        }
     </script>
 </body>
 </html>
