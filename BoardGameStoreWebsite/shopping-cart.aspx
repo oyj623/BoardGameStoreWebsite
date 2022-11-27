@@ -18,8 +18,8 @@
             <li>
                 <a href="home.aspx" class="logo">OnlyBoardGames</a>
             </li>
-            <li>
-                <a href="shopping-cart.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
+            <li>    
+                <a href="shopping-cart.aspx" class="cart-link">Your cart &rarr;<i class="fa-solid fa-cart-shopping"></i></a>
             </li>
 
         </ul>

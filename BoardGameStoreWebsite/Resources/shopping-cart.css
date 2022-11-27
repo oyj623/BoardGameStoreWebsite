@@ -4,13 +4,15 @@
 }
 #form1 {
     padding-top: 6em;
-    
+    padding-bottom: 3em;
+    background: linear-gradient(rgb(234 233 212), rgb(250, 248, 230));
 }
 .wallet {
     text-align: center;
     font-size: 2em;
     margin: 1em 3em;
     padding: 0.5em 1em;
+    
 }
 .alert {
     color: rgb(231, 55, 12);
@@ -95,6 +97,7 @@
     height: 2em;
     font-size: 1.0em;
     width: 10em;
+    background: none;
     border: none;
     border-bottom: 0.2em solid rgb(245, 64, 45);
     border-radius: 0.5em;

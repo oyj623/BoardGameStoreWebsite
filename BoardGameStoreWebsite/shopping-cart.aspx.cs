@@ -89,7 +89,12 @@ namespace BoardGameStoreWebsite
                             Alert.Visible = true;
                             return;
                         }
-
+                        if (qty <= 0)
+                        {
+                            Alert.Text = "Please enter a positive integer for quantity";
+                            Alert.Visible= true;
+                            return;
+                        }
                         if (qty <= shoppingCart[item.ItemIndex].Game.Stock)
                         {
                             totalPrice += shoppingCart[item.ItemIndex].Game.Price * qty;
