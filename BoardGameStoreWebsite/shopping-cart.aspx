@@ -25,34 +25,79 @@
         </ul>
     </header>
     <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <div class="wallet">
+            <i class="fa-solid fa-wallet"></i> Board Game Wallet: <asp:Label ID="Wallet" runat="server" Text="Label"></asp:Label>
+        </div>
         <asp:Repeater ID="Repeater1" runat="server">
             <HeaderTemplate></HeaderTemplate>
             <ItemTemplate>
-                <h1><%#Eval("Game.Name") %></h1>
+                <!-- Display each item from data source -->
                 <div class="cart-view">
                     <div class="check-box">
                         <asp:CheckBox runat="server" ID="gameCheckBox"></asp:CheckBox>
                     </div>
+                    <div class="game-name">
+                        <%#Eval("Game.Name") %>
+                    </div>
                     <div class="game-image">
-                        <asp:Image ID="Image1" runat="server" ImageUrl='~/Resources/images/<%#Eval("Game.Name") %>.png' />
+                        <img src="Resources/images/<%#Eval("Game.Name") %>.png" alt="<%#Eval("Game.Name") %> image"/>
                     </div>
                     <div class="quantity">
-
+                        Quantity: 
+                        <asp:TextBox ID="Quantity" runat="server" Text="1"></asp:TextBox>
+                        <asp:Label ID="NotEnoughStock" CssClass="not-enough-stock" runat="server" Text="Not enough stock !!"></asp:Label>
+                    </div>
+                    <div class="stock">
+                        Stock: <%#Eval("Game.Stock") %>
                     </div>
                     <div class="price">
-
+                        RM<%#Eval("Game.Price") %>.00
                     </div>
                 </div>
             </ItemTemplate>
             <FooterTemplate></FooterTemplate>
         </asp:Repeater>
-        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-            <asp:ListItem>Board Game Points</asp:ListItem>
-            <asp:ListItem>Online Transfer</asp:ListItem>
-            <asp:ListItem>Credit/Debit Card</asp:ListItem>
-        </asp:RadioButtonList>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+        <div class="payment-details">
+            <div class="personal-details">
+                <table>
+                    <tr>
+                        <td>Name: </td>
+                        <td>
+                            <asp:TextBox ID="RecipientName" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address: </td>
+                        <td>
+                            <asp:TextBox ID="RecipientAddress" runat="server" Rows="3"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone: </td>
+                        <td>
+                            <asp:TextBox ID="RecipientPhone" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td>
+                            <asp:TextBox ID="RecipientEmail" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="payment">
+                <h4>Select payment method: </h4>
+                <asp:RadioButtonList ID="PaymentMethod" runat="server">
+                    <asp:ListItem Text="Board Game Wallet">Board Game Wallet</asp:ListItem>
+                    <asp:ListItem Text="Online Transfer">Online Transfer</asp:ListItem>
+                    <asp:ListItem Text="Cards">Credit/Debit Card</asp:ListItem>
+                </asp:RadioButtonList>
+                <asp:Button ID="Pay" runat="server" Text="Pay" CssClass="pay-button" OnClick="Pay_Click" />
+                <asp:Label ID="BalanceInsufficient" runat="server" CssClass="balance-insufficient" Text="Balance Insufficient !!"></asp:Label>
+                <asp:Label ID="FunctionNotAvailable" runat="server" CssClass="function-unavailable" Text="Function not available yet..."></asp:Label>
+            </div>
+        </div>
     </form>
     <footer class="footer">
         <div class="footer-details">
@@ -73,5 +118,11 @@
         </div>
         <p class="copyright">© SWE2002109 | Ong Yi Jun</p>
     </footer>
+    <script src="https://kit.fontawesome.com/a4ee3fc773.js" crossorigin="anonymous"></script>
+    <script>
+            function validateForm() {
+
+            }
+    </script>
 </body>
 </html>

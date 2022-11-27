@@ -20,6 +20,7 @@
 .header-list li:last-child {
     width: 80%;
     text-align: right;
+    padding-right: 1.5em;
 }
 
 .header-list li:last-child i {

@@ -26,7 +26,44 @@
     </header>
 
     <form id="form" runat="server">
+        <div class="current-shipment">
+            <asp:Repeater ID="Deliveries" runat="server">
+                <HeaderTemplate>
+                    <div class="delivery-title">In delivery<i class="fa-solid fa-truck" style="padding: 0em 1em;"></i>:</div>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="order-recipient-details">
+                        <div class="order-recipient-user-details">
+                            <div class="recipient-name">
+                                Recipient Name: <%#Eval("Name") %>
+                            </div>
+                            <div class="recipient-address">
+                                Address: <%#Eval("Address") %>
+                            </div>
+                            <div class="recipient-email">
+                                Email: <%#Eval("Email") %>
+                            </div>
+                            <div class="recipient-phone">
+                                Phone: <%#Eval("Phone") %>
+                            </div>
+                        </div>
+                        <div class="order-recipient-items-details">
+                            <div class="recipient-items">
+                                <%#Eval("OutputItemsDetails") %>
+                            </div>
+                            <div class="recipient-total-price">
+                                Total price: <%#Eval("TotalPrice") %>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+                <FooterTemplate></FooterTemplate>
+            </asp:Repeater>
+        </div>
         <div class="content">
+            <div class="wallet">
+                <i class="fa-solid fa-wallet"></i> Board Game Wallet: <asp:Label ID="Wallet" runat="server" Text="Label"></asp:Label>
+            </div>
             <asp:Repeater ID="Repeater1" runat="server">
                 <HeaderTemplate></HeaderTemplate>
                 <ItemTemplate>
@@ -84,5 +121,6 @@
     </footer>
     
     <script src="https://kit.fontawesome.com/a4ee3fc773.js" crossorigin="anonymous"></script>
+    
 </body>
 </html>

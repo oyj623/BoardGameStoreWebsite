@@ -3,6 +3,42 @@
     padding: 0px;
 }
 
+.current-shipment {
+    padding: 7em 5em 2em;
+    background: linear-gradient(rgb(234 233 212), rgb(250, 248, 230));
+    display: block;
+}
+.delivery-title {
+    font-size: 2em;
+}
+.order-recipient-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em 1em;
+    margin: 0.5em 10em;
+    border: 2px solid rgb(248, 95, 6);
+    border-radius: 1.5em;
+    background-color: rgba(255, 101, 51, 0.5);
+    font-size: 1.8em;
+}
+.recipient-name .recipient-address .recipient-phone .recipient-items .recipient-total-price {
+    font-size: 1.7em;
+}
+.recipient-items-game {
+    display: inline;
+}
+.recipient-items-quantity {
+    display: inline-block;
+}
+
+
+.wallet {
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 3em;
+    padding: 0.5em 1em;
+}
 .content {
     padding-top: 5em;
     padding-bottom: 3em;
@@ -60,6 +96,7 @@
 .add-to-cart-button {
     display: flex;
     justify-content: flex-end;
+
     width: 50%;
 }
 .add-to-cart-success {
@@ -71,4 +108,14 @@
 .to-cart-button {
     padding: 0.8em 1.8em;
     font-size: 1.3em;
+    border-radius: 1.2em;
+    cursor: pointer;
+    border: 1px solid rgb(255, 101, 51);
+    background-color: rgb(255, 101, 51);
+    color: rgb(116, 78, 12);
+}
+.to-cart-button:hover {
+    border-width: 1.5px;
+    background-color: rgb(116, 78, 12);
+    color: rgb(255, 101, 51);
 }
